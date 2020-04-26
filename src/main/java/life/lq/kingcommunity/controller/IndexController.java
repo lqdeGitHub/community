@@ -7,13 +7,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HelloController {
-
-    @ResponseBody
-    @GetMapping("/hello")
-    public String hello(@RequestParam(name = "name") String name, Model model){
-        model.addAttribute("name",name);
-        String s = "hello," + name;
-        return s;
+public class IndexController {
+    @GetMapping("/")
+    public String index(){
+        return "index";
     }
 }
