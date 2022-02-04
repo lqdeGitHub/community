@@ -1,4 +1,4 @@
-##麋鹿社区
+##社区
 
 ##资料
 https://spring.io/guides
@@ -8,3 +8,7 @@ https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
 
 ##工具
 https://git-scm.com/download
+
+git init
+##GitHub
+https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
