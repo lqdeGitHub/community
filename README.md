@@ -16,14 +16,12 @@
 ```sql
 create table USER
 (
-    ID           INTEGER default NEXT VALUE FOR "" auto_increment,
+    ID           INTEGER auto_increment primary KEY NOT NULL,
     ACCOUNT_ID   VARCHAR(100),
     NAME         VARCHAR(50),
     TOKEN        CHAR(36),
     GMT_CREATE   BIGINT,
-    GMT_MODIFIED BIGINT,
-    constraint USER_PK
-        primary key (ID)
+    GMT_MODIFIED BIGINT
 );
 
 ```
