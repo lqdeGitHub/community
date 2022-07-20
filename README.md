@@ -13,7 +13,7 @@
 [Visual Paradigm](https://www.visual-paradigm.com)
 [flyway](https://flywaydb.org/documentation/usage/maven/)
 [lombok](https://www.projectlombok.org)
-
+[thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values)
 
 ##脚本
 ```sql
