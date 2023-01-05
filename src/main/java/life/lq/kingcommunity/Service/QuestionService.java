@@ -4,6 +4,7 @@ import life.lq.kingcommunity.dto.PaginationDTO;
 import life.lq.kingcommunity.dto.QuestionDTO;
 import life.lq.kingcommunity.exception.CustomizeErrorCode;
 import life.lq.kingcommunity.exception.CustomizeException;
+import life.lq.kingcommunity.mapper.QuestionExtMapper;
 import life.lq.kingcommunity.mapper.QuestionMapper;
 import life.lq.kingcommunity.mapper.UserMapper;
 import life.lq.kingcommunity.model.Question;
@@ -25,6 +26,9 @@ public class QuestionService {
 
     @Autowired
     private QuestionMapper questionMapper;
+
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
 
     public PaginationDTO list(Integer page, Integer size) {
 
@@ -139,5 +143,12 @@ public class QuestionService {
             }
         }
 
+    }
+
+    public void inCView(Integer id) {
+        Question updateQuestion = new Question();
+        updateQuestion.setId(id);
+        updateQuestion.setViewCount(1);
+        questionExtMapper.incView(updateQuestion);
     }
 }
