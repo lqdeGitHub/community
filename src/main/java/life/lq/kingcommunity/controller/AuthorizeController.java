@@ -37,7 +37,7 @@ public class AuthorizeController {
     private UserService userService;
 
     @GetMapping("/callback")
-    public String callback(@RequestParam(name = "code") String code, HttpServletResponse response){
+    public String callback(@RequestParam(name = "code") String code, HttpServletResponse response,HttpServletRequest request){
         AccessTokenDTO dto = new AccessTokenDTO();
         dto.setClient_id(clientId);
         dto.setClient_secret(secret);
@@ -57,7 +57,7 @@ public class AuthorizeController {
             userService.createOrUpdate(user);
             //登录成功 写cookie 和session
             response.addCookie(new Cookie("token",token));
-            //request.getSession().setAttribute("user",githubUser);
+            request.getSession().setAttribute("user",githubUser);
             return "redirect:/";
         }else{
             //登录失败 重新登录
